@@ -1,0 +1,29 @@
+.header{
+    background-image: url(../images/Recette02.jpg);
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+   
+
+}
+
+h1{
+    color: #FFD15B;
+    text-align: center;
+    font-weight: bold;
+    font-size: 44px;
+}
+
+.form-control{
+   width: 950px;
+}
+
+.container_header{
+   position: absolute;
+   top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
