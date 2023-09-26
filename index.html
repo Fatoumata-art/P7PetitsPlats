@@ -1,33 +1,118 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="assets/images/logo/logored.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>LesPetitsPlats</title>
-</head>
-<body>
-    <header class="header">
-        <img src="assets/images/logo/Logo.png" class="logo" alt="logo les petits plats page d'accueil" tabindex="0">
-        <div class="container_header">
-        <h1 tabindex="0">CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</h1>
-        <form action="">
-            <label for="search_recipe"></label>
-            <input class="form-control form-control-lg" type="search" placeholder="Rechercher une recette, un ingrédient, ..." aria-label=".form-control-lg example" name="search_recipe" id="search_recipe">
-            <div class="input-group-append">
-                <button class="btn btn-secondary" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </div>
-        </form>
-    </div>
-    </header>
-    <main id="main">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="assets/images/logo/logored.png">
+        <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>LesPetitsPlats</title>
+    </head>
+    <body>
+        <header class="header">
+            <img src="assets/images/logo/Logo.png" class="logo" alt="logo les petits plats page d'accueil" tabindex="0">
+            <div class="container_header">
+                <h1 tabindex="0">CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</h1>
+                <form action="">
+                    <label for="search_recipe"></label>
+                    <input class="form-control form-control-lg" type="search" placeholder="Rechercher une recette, un ingrédient, ..." aria-label=".form-control-lg example" name="search_recipe" id="search_recipe">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button">
+                        <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </header>
+        <main id="main">
+            <section class="filter_section">
+                <div class="filter_contenaire">
+                    <div class="filter_container_select">
+                        <!-- filter button -->
+                        <div class="recipes-filter">
+                            <!-- <label for="filter-select">Trier</label> -->
+                            <select id="filter-select" name="filter-select" aria-label="Tri media">
+                                <option value="01">ingrédients</option>
+                                <option value="01">salade</option>
+                                <option value="02">tomate</option>
+                                <option value="03">onion</option>
+                            </select>
+                            <span class="container-icon">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i> 
+                            </span> 
+                        </div> 
+                        <!-- filter button -->
+                        <div class="recipes-filter">
+                            <!-- <label for="filter-select">Trier</label> -->
+                            <select id="filter-select" name="filter-select" aria-label="Tri media">
+                                <option value="01">ingrédients</option>
+                                <option value="01">salade</option>
+                                <option value="02">tomate</option>
+                                <option value="03">onion</option>
+                            </select>
+                            <span class="container-icon">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i> 
+                            </span> 
+                        </div> 
+                        <!-- filter button -->
+                        <div class="recipes-filter">
+                            <!-- <label for="filter-select">Trier</label> -->
+                            <select id="filter-select" name="filter-select" aria-label="Tri media">
+                                <option value="01">ingrédients</option>
+                                <option value="01">salade</option>
+                                <option value="02">tomate</option>
+                                <option value="03">onion</option>
+                            </select>
+                            <span class="container-icon">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i> 
+                            </span> 
+                        </div> 
+                    </div>
 
-    </main>
+                    <!-- Totals recipes -->
+                    <div class="totals_recipes">
+                        <p>nombre de recettes disponibles</p>
+                    </div>
+
+                </div>
+            </section>
+
+                <section>
+
+                    <!-- Recipes Cards -->
+                    <div class="recipes-cards-container">
+                            <figure class="recipe-card">
+                                <div class="card-img">
+                                    <img src="assets/images/Recette01.jpg" alt="la palette du goût">
+                                    <span class="card-time">10 mn</span>
+                                </div>
+                                <figcaption class="card-text">
+                                    <div>
+                                        <h3 class="title">Titre de la recette</h3>
+                                        <h4 class="sub_titie">recette</h4>
+                                        <p>Mettre les glaçons... </p>
+                                    </div>
+                                    <div>
+                                        <h4 class="sub_titie">ingredients</h4>
+                                        <p>Lait de coco </p>
+                                        <span>
+                                            400ml
+                                        </span>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                    </div>
+                    
+               
+                
+            </section>
+
+        </main>
+
+        <script src="scripts/index.js"></script>
+
     
-</body>
+        
+    </body>
 </html>
