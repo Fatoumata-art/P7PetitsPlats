@@ -168,7 +168,7 @@ transform: scale(1);
 
 .recipes-cards-container {
 display: grid;
-grid-template-columns: 1fr;
+grid-template-columns: repeat(3, 1fr);
 box-sizing: border-box;
 width: 100%;
 }
@@ -181,7 +181,7 @@ overflow: hidden;
 background-color: white;
 box-shadow: 0px 3px 8px 2px #e2dcdc;
 /* height: 730px; */
-width: 25%;
+width: 380px;
 }
 .recipe-card .card-text {
 position: relative;
