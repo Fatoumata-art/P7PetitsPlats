@@ -68,95 +68,152 @@ section{
 }
   
 .recipes-filter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    background-color: white;
-    border-radius: 5px;
-    cursor: pointer;
+   position: relative;
+   width: 30%;
+}
 
-    }
-    .recipes-filter label{
-      display: none;
-    }
+.select_header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: gray;
 
-  .recipes-filter select{
-    font-size: 18px;
-    font-weight: 400;
-    border: none;
-    min-width: 140px;
-    background-color: white;
-    color: black;
-    appearance: none;
-    padding: 0 40px 0 20px;
-  }
+}
+  .select_header .select_title{
+  font-size: 18px;
+  font-weight: 400;
+ 
+}
 
+.select_header .arrow_icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  transition: 0.3s;
+}
 
-  .filter-container select::-ms-expand {
-    display: none;
-  }
-   
-   option{
-    padding: 10px;
-    margin-top: 10px;
-   }
+.select_header.open .arrow_icon{
+  transform: rotate(-180deg);
+}
 
-   option:hover{
-    background-color: yellow;
-   }
-   /* end filter button */
+.list_ingredient{
+  position: relative;
+  margin-top: 2px;
+  border-radius: 5px;
+  padding: 16px;
+  background-color: white;
+  box-shadow: gray;
+  display: none;
+}
 
-   /* cards recipes */
+.select_header.open ~ .list_ingredient{
+  display: block;
+}
 
-   .recipes-cards-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    box-sizing: border-box;
-    width: 100%;
-  }
+.list_ingredient .ingredient{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 50px;
+  cursor: pointer;
+  padding: 0 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
 
-   .recipe-card {
-    margin: 10px;
-    padding: 0;
-    border-radius: 15px;
-    overflow: hidden;
-    background-color: white;
-    box-shadow: 0px 3px 8px 2px #e2dcdc;
-    /* height: 730px; */
-    width: 25%;
-  }
-  .recipe-card .card-text {
-    position: relative;
-    padding: 0px 10px 0px 10px;
-    margin-top: -15px;
-    height: 400px;
-  }
-  .recipe-card .card-text .title {
-    font-weight: bold;
-  }
-  .recipe-card .card-text p {
-    margin-top: 5px;
-  }
-  
-  .recipe-card .card-img {
-    position: relative;
-    height: 340px;
-  }
-  .recipe-card .card-img img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
-  .recipe-card .card-img .card-time {
-    position: absolute;
-    padding: 0.4rem 0.8rem;
-    background: yellow;
-    color: black;
-    border-radius: 18px;
-    opacity: 0.9;
-    top: 0.8rem;
-    right: 0.8rem;
-  }
+.list_ingredient .ingredient:hover{
+background-color: yellow;
 
-   /* end cards repes */
+}
+
+.ingredient .ingredient_text{
+font-size: 16px;
+font-weight: 400;
+color: black;
+}
+
+.ingredient .checkbox{
+display: flex;
+align-items: center;
+justify-content: center;
+height: 16px;
+width: 16px;
+border-radius: 4px;
+margin-right: 12px;
+border: 1.5px solid black;
+transition: all 0.3s ease-in-out;
+}
+.ingredient.checked .checkbox{
+background-color: blue;
+border-color: blue;
+}
+.checkbox .check-icon{
+color: rgb(11, 39, 11);
+font-size: 11px;
+transform: scale(0);
+transition: all 0.2s ease-in-out;
+}
+.ingredient.checked .check-icon{
+transform: scale(1);
+}
+/* end filter button */
+
+/* cards recipes */
+
+.recipes-cards-container {
+display: grid;
+grid-template-columns: 1fr;
+box-sizing: border-box;
+width: 100%;
+}
+
+.recipe-card {
+margin: 10px;
+padding: 0;
+border-radius: 15px;
+overflow: hidden;
+background-color: white;
+box-shadow: 0px 3px 8px 2px #e2dcdc;
+/* height: 730px; */
+width: 25%;
+}
+.recipe-card .card-text {
+position: relative;
+padding: 0px 10px 0px 10px;
+margin-top: -15px;
+height: 400px;
+}
+.recipe-card .card-text .title {
+font-weight: bold;
+}
+.recipe-card .card-text p {
+margin-top: 5px;
+}
+
+.recipe-card .card-img {
+position: relative;
+height: 340px;
+}
+.recipe-card .card-img img {
+width: 100%;
+height: 300px;
+object-fit: cover;
+}
+.recipe-card .card-img .card-time {
+position: absolute;
+padding: 0.4rem 0.8rem;
+background: yellow;
+color: black;
+border-radius: 18px;
+opacity: 0.9;
+top: 0.8rem;
+right: 0.8rem;
+}
+
+/* end cards repes */

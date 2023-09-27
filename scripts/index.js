@@ -1,10 +1,32 @@
-const div = document.querySelectorAll('.recipes-filter');
+const ingredientSelect = document.querySelector('.select_header');
 
-  const icon = document.querySelectorAll('.container-icon');
+  const ingredients = document.querySelectorAll('.ingredient');
 
-    for(let i = 0; i < div.length; i++){
-      //console.log('div', div[i])
-    }
+  ingredientSelect.addEventListener('click', () => {
+    ingredientSelect.classList.toggle('open');
+  })
+
+  ingredients.forEach(ingredient => {
+    ingredient.addEventListener('click', () => {
+      ingredient.classList.toggle('checked');
+
+      let checked = document.querySelectorAll('.checked');
+      let selectTitle = document.querySelector('.select_title');
+
+        if(checked && checked.length > 1){
+          selectTitle.innerHTML = `${checked.length} Ingredients`;
+      
+        }else if(checked && checked.length == 1 ){
+          selectTitle.innerHTML =`${checked.length} Ingredient`;
+        }else{
+          selectTitle.innerHTML = "Ingredients";
+        } 
+    })
+  })
+
+    // for(let i = 0; i < ingredientSelect.length; i++){
+    //   //console.log('div', div[i])
+    // }
 
 
   //const selectBtn = div.querySelector('.filter-containe');
