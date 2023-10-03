@@ -1,15 +1,55 @@
 // imported files
 import { recipes } from "../data/recipes.js";
 
-//Traitement de filter select
+
+
+  const filterDom = () => {
+
+    const filterContainer = document.querySelector('.filter_container_select');
+    const selectFilter = document.createElement('div');
+      selectFilter.classList.add('recipes-filter');
+      selectFilter.innerHTML = `
+        <div class="select_header">
+          <span class="select_title">Ingredients</span>
+          <span class="arrow_icon">
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          </span>
+       </div>
+          <ul class="list_ingredient">
+              <li class="ingredient_liste">
+                  <span class="checkbox">
+                      <i class="fa fa-check check-icon"></i>
+                  </span>
+                  <span class="ingredient_text">hhhh</span>
+              </li>
+              <li class="ingredient_liste">
+                  <span class="checkbox">
+                      <i class="fa fa-check check-icon"></i>
+                  </span>
+                  <span class="ingredient_text">tomate</span>
+              </li>
+              <li class="ingredient_liste">
+                  <span class="checkbox">
+                      <i class="fa fa-check check-icon"></i>
+                  </span>
+                  <span class="ingredient_text">onion</span>
+              </li>
+          </ul>
+      `;
+      filterContainer.appendChild(selectFilter);
+  }
+
+  filterDom();
+
+  //Traitement de filter select
 const ingredientSelect = document.querySelector('.select_header');
-const ingredients = document.querySelectorAll('.ingredient');
+const ingredientsFilter = document.querySelectorAll('.ingredient_liste');
 
   ingredientSelect.addEventListener('click', () => {
     ingredientSelect.classList.toggle('open');
   })
 
-  ingredients.forEach(ingredient => {
+  ingredientsFilter.forEach(ingredient => {
     ingredient.addEventListener('click', () => {
       ingredient.classList.toggle('checked');
 
@@ -26,49 +66,18 @@ const ingredients = document.querySelectorAll('.ingredient');
         } 
     })
   })
+  
 
-//   <div class="recipes-filter"> 
-//   <div class="select_header">
-//       <span class="select_title">Ingredients</span>
-//       <span class="arrow_icon">
-//           <i class="fa fa-chevron-down" aria-hidden="true"></i>
-//       </span>
-//   </div>
-//   <ul class="list_ingredient">
-//       <li class="ingredient">
-//           <span class="checkbox">
-//               <i class="fa fa-check check-icon"></i>
-//           </span>
-//           <span class="ingredient_text">salade</span>
-//       </li>
-//       <li class="ingredient">
-//           <span class="checkbox">
-//               <i class="fa fa-check check-icon"></i>
-//           </span>
-//           <span class="ingredient_text">tomate</span>
-//       </li>
-//       <li class="ingredient">
-//           <span class="checkbox">
-//               <i class="fa fa-check check-icon"></i>
-//           </span>
-//           <span class="ingredient_text">onion</span>
-//       </li>
-//   </ul>
-// </div>
+// function handlePress(){
+  
+// }
 
-  const cardContainer = document.querySelector('.recipes-cards-container');
+ 
 
-  const getRecipes = () => {
-
-    
-    // fetch('./data/recipes.js')
-    //   .then(response => {
-    //     console.log(response);
-    //    return response.json();
-    //   })
-      
+  const getRecipesCard = () => {
+    const cardContainer = document.querySelector('.recipes-cards-container');
         recipes.map(recipe => {
-          console.log("recette", recipe);
+          //console.log("recette", recipe);
           const card = document.createElement('figure');
           card.classList.add('recipe-card');
           card.innerHTML = `
@@ -84,42 +93,43 @@ const ingredients = document.querySelectorAll('.ingredient');
               </div>
               <div>
                   <h4 class="sub_titie">INGREDIENTS</h4>
-                  <ul>
-                    <li>${ingredients.ingredient}
-                      <span>
-                      ${ingredients.quantity} ${ingredients.unit}
-                      </span>
-                    </li>
+
+                  <ul class="card-text-ingredients>
+                  <li></li>
                   </ul>
               </div>
           </figcaption>
      
             `;
+            
+            getIngredients(card, recipe)
             cardContainer.appendChild(card);
         })
     }
    
+    function getIngredients(card, recipe){
 
-   getRecipes();
+      const ul = card.querySelector('ul');
+      recipe.ingredients.map(ingredient => {
+        const li = document.querySelector("li");
+        li.innerHTML = `${ingredient.ingredient} <span>${ingredient.quantity} ml </span>`
+        ul.appendChild(li);
+      })
 
-  //     if (recipesData.ok) {
-  //       const data = recipesData.json()
-  //       recipes = data.recipes
-  //       console.log("recettes",recipes)
-  //   }
-  //   return recipes
-  // } catch (err) {
-  //   console.log(err)
-  //   return new Error('impossible de contacter le serveur')
-  // }
+                              }
+    
+  
+ 
 
  
 
+function init(){
+  
+  //let  filterRecipe = filterDom();
+  //console.log(`I feel ${filterRecipe.repeat(3)}`);
+    
+  getRecipesCard();
 
-// function init(){
+}
 
-//   const filterData = getRecipes();
-//  //console.log(filterData)
-// }
-
-// init();
+init();
