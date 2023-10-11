@@ -19,9 +19,8 @@ export const createCards = (recipe) => {
             <div>
                 <h4 class="sub_titie">INGREDIENTS</h4>
 
-                <ul class="card-text-ingredients>
-                <li class="list-ingredient">
-                </li>
+                <ul class="card-text-ingredients">
+               
                 </ul>
             </div>
         </figcaption>
@@ -29,7 +28,7 @@ export const createCards = (recipe) => {
         `;
     
         getIngredients(card, recipe);
-        getUstensils(recipe)
+        //getUstensils(recipe)
         cardContainer.appendChild(card);
     }
     
@@ -37,14 +36,19 @@ export const createCards = (recipe) => {
     function getIngredients(card, recipe){
         for (let j = 0; j < recipe["ingredients"].length; j++) {
             let ingredient = recipe["ingredients"][j];
-            console.log("infredient", ingredient)
+            console.log("ingredient", ingredient)
 
  const ul = card.querySelector('ul');
 
-        const li =  `<li> ${ingredient["ingredient"]}</li>
+   // const li =  `<li>test</li>
+   const li = document.createElement("li");
+   li.innerHTML =  `<li> ${ingredient["ingredient"]}</li>
                     <span>${ingredient["quantity"]} ml</span>
                     `;
+        
+            
         console.log( "liste", li)
+        ul.appendChild(li);
        // li.innerText = ; //
        // ul.inserAdjacentHTML('beforeend',li);
        }
@@ -62,6 +66,7 @@ export const createCards = (recipe) => {
                     `;
         console.log( "liste", li)
        // li.innerText = ; //
+      
        // ul.inserAdjacentHTML('beforeend',li);
        }
 
