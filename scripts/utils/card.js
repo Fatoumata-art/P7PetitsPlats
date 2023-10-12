@@ -14,7 +14,7 @@ export const createCards = (recipe) => {
             <div>
                 <h3 class="title">${recipe.name}</h3>
                 <h4 class="sub_titie">RECETTE</h4>
-                <p></p>${recipe.description}</p>
+                <p>${recipe.description}</p>
             </div>
             <div>
                 <h4 class="sub_titie">INGREDIENTS</h4>
@@ -42,13 +42,27 @@ export const createCards = (recipe) => {
 
    // const li =  `<li>test</li>
    const li = document.createElement("li");
-   li.innerHTML =  `<li> ${ingredient["ingredient"]}</li>
-                    <span>${ingredient["quantity"]} ml</span>
-                    `;
-        
+        li.classList.add('list')
+    li.innerHTML =  `<li class="list-ingredient"> ${ingredient["ingredient"]}</li> `;
+                    
+                    let quantity_text = "";
+                    // We check if we have a quantity to show
+            if(ingredient.hasOwnProperty("quantity"))
+            {
+                quantity_text = "" + ingredient["quantity"];
+                // We check if there is a unit to diplay
+                if(ingredient.hasOwnProperty("unit"))
+                {
+                    quantity_text+=" " + ingredient["unit"];
+                }
+            }
+            const ingredientQuantity = document.createElement("span"); 
+            ingredientQuantity.textContent = quantity_text;      
             
-        console.log( "liste", li)
-        ul.appendChild(li);
+       
+            ul.appendChild(li);
+        li.appendChild(ingredientQuantity);
+       
        // li.innerText = ; //
        // ul.inserAdjacentHTML('beforeend',li);
        }
