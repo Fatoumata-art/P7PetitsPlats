@@ -36,7 +36,6 @@ export const createCards = (recipe) => {
     function getIngredients(card, recipe){
         for (let j = 0; j < recipe["ingredients"].length; j++) {
             let ingredient = recipe["ingredients"][j];
-            console.log("ingredient", ingredient)
 
  const ul = card.querySelector('ul');
 

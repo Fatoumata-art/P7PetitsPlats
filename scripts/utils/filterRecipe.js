@@ -1,4 +1,4 @@
-const filterDom = () => {
+export const filterDom = () => {
 
     const filterContainer = document.querySelector('.filter_container_select');
     const selectFilter = document.createElement('div');
@@ -31,5 +31,13 @@ const filterDom = () => {
               </li>
           </ul>
       `;
+      selectFilter.querySelector(".select_header").addEventListener('click',() =>{
+        
+       
+        document.querySelector(".list_ingredient").toggle('open');
+    
+     })
       filterContainer.appendChild(selectFilter);
   }
+  
+  
