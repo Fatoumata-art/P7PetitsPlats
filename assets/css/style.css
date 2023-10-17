@@ -95,7 +95,7 @@ section{
   
 .recipes-filter {
    position: relative;
-   width: 30%;
+   width: 160px;
 }
 
 .select_header{
@@ -128,34 +128,64 @@ section{
   transform: rotate(-180deg);
 }
 
-.list_ingredient{
+.list_option{
   position: relative;
+  max-height: 250px;
   margin-top: 2px;
   border-radius: 5px;
-  padding: 16px;
+  padding: 10px;
+  /* text-align: center; */
   background-color: white;
   box-shadow: gray;
+  overflow-y: auto;
   display: none;
 }
 
-.select_header.open ~ .list_ingredient{
+.search{
+  position: relative;
+}
+
+.search i{
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  right: 0;
+  color: #999;
+  font-size: 12px;
+ 
+}
+
+.search input{
+  height: 30px;
+  width: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #999;
+}
+
+.select_header.open ~ .list_option{
   display: block;
 }
 
-.list_ingredient .ingredient_liste{
+
+
+.list_option .option{
   display: flex;
   align-items: center;
   list-style: none;
-  height: 50px;
+  font-size: 12px;
+  text-align: center;
+  height: 40px;
   cursor: pointer;
-  padding: 0 15px;
   border-radius: 5px;
   transition: 0.3s;
 }
 
-.list_ingredient .ingredient_liste:hover{
+.list_option .option:hover{
 background-color: #FFD15B;
-
+font-weight: 600;
+padding: 0;
+margin: 0;
 }
 
 .ingredient_liste .ingredient_text{

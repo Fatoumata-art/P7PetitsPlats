@@ -18,9 +18,7 @@ export const createCards = (recipe) => {
             </div>
             <div>
                 <h4 class="sub_titie">INGREDIENTS</h4>
-
                 <ul class="card-text-ingredients">
-               
                 </ul>
             </div>
         </figcaption>
@@ -37,15 +35,13 @@ export const createCards = (recipe) => {
         for (let j = 0; j < recipe["ingredients"].length; j++) {
             let ingredient = recipe["ingredients"][j];
 
- const ul = card.querySelector('ul');
-
-   // const li =  `<li>test</li>
-   const li = document.createElement("li");
+        const ul = card.querySelector('ul');
+        const li = document.createElement("li");
         li.classList.add('list')
-    li.innerHTML =  `<li class="list-ingredient"> ${ingredient["ingredient"]}</li> `;
+        li.innerHTML =  `<li class="list-ingredient"> ${ingredient["ingredient"]}</li> `;
                     
-                    let quantity_text = "";
-                    // We check if we have a quantity to show
+        let quantity_text = "";
+        // We check if we have a quantity to show
             if(ingredient.hasOwnProperty("quantity"))
             {
                 quantity_text = "" + ingredient["quantity"];
@@ -55,15 +51,10 @@ export const createCards = (recipe) => {
                     quantity_text+=" " + ingredient["unit"];
                 }
             }
-            const ingredientQuantity = document.createElement("span"); 
-            ingredientQuantity.textContent = quantity_text;      
-            
-       
-            ul.appendChild(li);
+        const ingredientQuantity = document.createElement("span"); 
+        ingredientQuantity.textContent = quantity_text;      
+        ul.appendChild(li);
         li.appendChild(ingredientQuantity);
-       
-       // li.innerText = ; //
-       // ul.inserAdjacentHTML('beforeend',li);
        }
 
     }
