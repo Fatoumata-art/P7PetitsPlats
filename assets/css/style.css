@@ -194,30 +194,7 @@ font-weight: 400;
 color: black;
 }
 
-.ingredient_liste .checkbox{
-display: flex;
-align-items: center;
-justify-content: center;
-height: 16px;
-width: 16px;
-border-radius: 4px;
-margin-right: 12px;
-border: 1.5px solid black;
-transition: all 0.3s ease-in-out;
-}
-.ingredient_liste.checked .checkbox{
-background-color: blue;
-border-color: blue;
-}
-.checkbox .check-icon{
-color: rgb(11, 39, 11);
-font-size: 11px;
-transform: scale(0);
-transition: all 0.2s ease-in-out;
-}
-.ingredient_liste.checked .check-icon{
-transform: scale(1);
-}
+
 /* end filter button */
 
 /* total recipes */
@@ -231,9 +208,13 @@ transform: scale(1);
 
 .recipes-cards-container {
 display: grid;
-grid-template-columns: repeat(3, 1fr);
+ grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+gap: 3rem;
 box-sizing: border-box;
-width: 100%;
+
+}
+.hide{
+  display: none;
 }
 
 .recipe-card {
@@ -243,9 +224,15 @@ border-radius: 15px;
 overflow: hidden;
 background-color: white;
 box-shadow: 0px 3px 8px 2px #e2dcdc;
-/* height: 730px; */
 width: 380px;
+margin-bottom: 20px;
+transition: transform 0.2s linear;
 }
+
+.recipe-card:hover {
+  transform: scale(1.05);
+}
+
 .recipe-card .card-text {
 position: relative;
 padding: 0px 12px 0px 15px;
@@ -256,9 +243,18 @@ height: 100%;
 font-weight: bold;
 }
 .recipe-card .card-text p {
-margin-top: 5px;
+  width: 350px;
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  
+/* margin-top: 5px;
 line-height: 0.6cm;
-text-align: justify;
+overflow: hidden;
+ */
+
 }
 
 .card-text-ingredients{
