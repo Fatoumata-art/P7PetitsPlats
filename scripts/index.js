@@ -3,7 +3,7 @@ import { recipes } from "../data/recipes.js";
 import { filterIngredients , listIngredient } from "./utils/filterIngredients.js";
 import { filteAppareils, listAppareil } from "./filterAppareils.js";
 import { filterUstensils, listUstensil } from "./utils/filterUstensils.js";
-import { createCards } from "./utils/card.js";
+import { displayRecipes, filterRecipes } from "./utils/search.js";
 
 function init(){
   // selet filter
@@ -14,43 +14,15 @@ function init(){
   const Appareil = filteAppareils();
   listAppareil(recipes)
 
-  //search input select option
-  const optionList = document.querySelector('list_option li');
-  const optiontSearches = document.querySelectorAll('#optionSearch');
-  optiontSearches.forEach(optiontSearch =>
-    
-    optiontSearch.addEventListener('keyup', function(){
-      let filter, li, i, textValue;
-      filter = optiontSearch.value.toUpperCase();
-      li = optionList.getElementsByTagName(li);
-      for( i = 0; i < li.length; i++){
-        liCount = li[i];
-        textValue = liCount.textContent;
-        if(textValue.toUpperCase().indexOf(filter) > -1){
-          li[i].style.display = '';
-        }else{
-          li[i].style.display = 'none';
-        }
-      }
-    })
-    )
   
 
-  //Total recettes
-  const totalRecipe = document.getElementById("totalRecipe");
-  totalRecipe.textContent =  ` ${ recipes.length} recettes `;
   
+  
+//display recipes
 
+filterRecipes();
+displayRecipes(recipes);
  
-  recipes.map(recipe => {
-    //console.log("recette", recipe);
-    createCards(recipe);
-    //getIngredients(card, recipe)
-    
-})
-
 }
-
-
 
   init()
