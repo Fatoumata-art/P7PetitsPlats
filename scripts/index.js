@@ -9,11 +9,12 @@ function init(){
   // selet filter
   const ingredient = filterIngredients();
   listIngredient(recipes);
-  const ustensil = filterUstensils();
-  listUstensil(recipes);
   const Appareil = filteAppareils();
   listAppareil(recipes)
 
+  const ustensil = filterUstensils();
+  listUstensil(recipes);
+ 
   //search input select option
   const optionList = document.querySelector('list_option li');
   const optiontSearches = document.querySelectorAll('#optionSearch');
@@ -51,6 +52,29 @@ function init(){
 
 }
 
+export const clearButton = () => {
+  let clear = document.getElementsByTagName('.fa-times')
+  console.log(clear)
+  let inputs = document.getElementsByTagName("input");
+  console.log(inputs);
+
+  for(let i = 0; i < clear.length; i++){
+    clear[i].addEventListener('click', () => {
+    
+      inputs.forEach(input => input.value = '');
+      clear.style.display = "none";
+    })
+  }
+     
+  
+      // inputs.addEventListener('input', () => {
+      //   clear.style.display = "block";
+      // })
+  
+}
+
+
+clearButton();
 
 
   init()

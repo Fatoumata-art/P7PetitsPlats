@@ -33,13 +33,13 @@ h1{
 }
 
 .form-control{
- 
+ position: relative;
    height: 65px;
    border-radius: 10px;
-  position: relative;
+ 
 }
 
-.btn{
+.btn, .fa-times{
   position: absolute;
   background: black;
   color: white;
@@ -50,6 +50,16 @@ h1{
   right: 0.5rem;
 }
 
+.fa-times{
+  position: absolute;
+  right: 3rem; 
+  color: rgb(94, 92, 92);
+  font-size: 25px;
+ display: flex;
+ align-items: center;
+  background-color: transparent;
+ /* display: none; */
+}
 .container_header{
     position: absolute;
     top: 50%;
@@ -145,13 +155,24 @@ section{
   position: relative;
 }
 
+.search .fa-times{
+  right: -45px;
+  display: none;
+  top: 35px;
+}
+
+.search.show .fa-times{
+  display: block;
+  
+}
+
 .search i{
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   right: 0;
   color: #999;
-  font-size: 12px;
+  font-size: 11px;
  
 }
 
@@ -162,6 +183,7 @@ section{
   outline: none;
   border: 1px solid #999;
 }
+
 
 .select_header.open ~ .list_option{
   display: block;

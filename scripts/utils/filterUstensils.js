@@ -7,7 +7,7 @@ export const filterUstensils = () => {
       selectFilter.classList.add('recipes-filter');
       selectFilter.innerHTML = `
         <div class="select_header">
-          <span class="select_title">Ustensils</span>
+          <span class="select_title">Ustensiles</span>
           <span class="arrow_icon">
               <i class="fa fa-chevron-down" aria-hidden="true"></i>
           </span>
@@ -15,7 +15,7 @@ export const filterUstensils = () => {
        </div>
           <ul class="list_option" id="ustensil">
             <div class="search">
-            <input type="text" id="optiontSearch" placeholder="">
+            <input type="text" id="optiontSearch" placeholder=""> <span><i class="fa fa-times" aria-hidden="true"></i></span>
             <i class="fal fa-search"></i>
           </div>
           </ul>
