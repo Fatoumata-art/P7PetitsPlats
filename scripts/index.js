@@ -17,11 +17,6 @@ function init(){
 
   
   
-
-  //Total recettes
-  // const totalRecipe = document.getElementById("totalRecipe");
-  // totalRecipe.textContent =  ` ${ recipes.length} recettes `;
-  
 //display recipes
 filterRecipes(recipes);
 displayRecipes(recipes);

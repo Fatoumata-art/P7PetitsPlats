@@ -58,7 +58,7 @@ h1{
  display: flex;
  align-items: center;
   background-color: transparent;
- /* display: none; */
+ display: none;
 }
 .container_header{
     position: absolute;
@@ -159,6 +159,7 @@ section{
   right: -45px;
   display: none;
   top: 35px;
+  
 }
 
 .show {
@@ -278,10 +279,6 @@ font-weight: bold;
   -webkit-box-orient: vertical;
   overflow: hidden;
   
-/* margin-top: 5px;
-line-height: 0.6cm;
-overflow: hidden;
- */
 
 }
 
@@ -330,4 +327,4 @@ right: 0.8rem;
   font-size: 16px;
 }
 
-/* end cards repes */
+/* end cards recipes */
