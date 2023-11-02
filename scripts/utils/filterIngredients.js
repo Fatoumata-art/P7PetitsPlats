@@ -1,4 +1,4 @@
-import { clearButton } from "../index.js";
+
 
 export const filterIngredients = () => {
 

@@ -1,5 +1,4 @@
 
-
 export const filteAppareils = () => {
 
     const filterContainer = document.querySelector('.filter_container_select');

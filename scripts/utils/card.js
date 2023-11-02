@@ -2,9 +2,11 @@
 
   
 export const createCards = (recipe) => {
-        const cardContainer = document.querySelector('.recipes-cards-container');
-        const card = document.createElement('figure');
+        
+    const cardContainer = document.querySelector('.recipes-cards-container');
+    const card = document.createElement('figure');
         card.classList.add('recipe-card');
+        
         card.innerHTML = `
         <div class="card-img">
             <img src="assets/images/${recipe.image}" alt="${recipe.name}">
@@ -14,7 +16,7 @@ export const createCards = (recipe) => {
             <div>
                 <h3 class="title">${recipe.name}</h3>
                 <h4 class="sub_titie">RECETTE</h4>
-                <p>${recipe.description}</p>
+                <p id="card-desc">${recipe.description}</p>
             </div>
             <div>
                 <h4 class="sub_titie">INGREDIENTS</h4>
@@ -24,18 +26,20 @@ export const createCards = (recipe) => {
         </figcaption>
     
         `;
-    
+        
         getIngredients(card, recipe);
-        //getUstensils(recipe)
-        cardContainer.appendChild(card);
+
+      cardContainer.appendChild(card);
+     
     }
     
    
-    function getIngredients(card, recipe){
+   function getIngredients(card, recipe){
+        const ul = card.querySelector('ul');
+
         for (let j = 0; j < recipe["ingredients"].length; j++) {
             let ingredient = recipe["ingredients"][j];
 
-        const ul = card.querySelector('ul');
         const li = document.createElement("li");
         li.classList.add('list')
         li.innerHTML =  `<li class="list-ingredient"> ${ingredient["ingredient"]}</li> `;
@@ -52,30 +56,16 @@ export const createCards = (recipe) => {
                 }
             }
         const ingredientQuantity = document.createElement("span"); 
-        ingredientQuantity.textContent = quantity_text;      
-        ul.appendChild(li);
+        ingredientQuantity.textContent = quantity_text;     
         li.appendChild(ingredientQuantity);
+ 
+        ul.appendChild(li);
        }
 
     }
 
-    function getUstensils(recipe){
-        for (let j = 0; j < recipe["ustensils"].length; j++) {
-            let ustensil = recipe["ustensils"][j];
-            console.log("ustensils", ustensil)
+   
 
- const ul = document.createElement('ul');
-
-        const li =  `<li> ${ustensil}</li>
-                    `;
-        console.log( "liste", li)
-       // li.innerText = ; //
-      
-       // ul.inserAdjacentHTML('beforeend',li);
-       }
-
-    }
-    
     
   
  
