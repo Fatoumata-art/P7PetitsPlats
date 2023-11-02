@@ -4,8 +4,8 @@ import { createCards } from "./card.js";
 const cardContainer = document.querySelector(" .recipes-cards-container ");
 const search = document.getElementById("search_recipe");
 const totalRecipe = document.getElementById("totalRecipe");
-let msg = document.querySelector(".container_header span");
-
+let msg = document.querySelector(".container_header .msgError");
+console.log(msg)
 const figure = document.getElementsByClassName("recipe-card");
 
    /*export const filterRecipes = () => {
@@ -32,23 +32,39 @@ const figure = document.getElementsByClassName("recipe-card");
 
     export const filterRecipes = (recipes) => {
         search.addEventListener("input", (e) => {
-            const searchValue = e.target.value//.toLowerCase();
-           // console.log(searchValue);
-            let count = 0
-            const  filterData = []
-
-            for (let element of recipes) {
-                if ( element.name.includes(searchValue) ||
-                element.description.includes(searchValue) ||
-                element.ingredients.includes(searchValue)) {
-                    filterData.push(element)
-                    count++
-                }
+            const searchValue = e.target.value,
+            value = searchValue.toLowerCase();
+           
+            if(value.length < 3){
+                msg.innerHTML = "Veiller saisir 3 caractères minimum";
+               msg.style.color = "white";
+               return false;
             }
-            
+            msg.innerHTML =""
+                let count = 0
+                const  filterData = [];
+    
+               
+                for (let element of recipes) {
+                    if ( element.name.includes(value) ||
+                    element.description.includes(value) ||
+                    element.ingredients.includes(value)) {
+                        filterData.push(element)
+                        count++
+                    }
+                }
+                   
             displayRecipes(filterData);
             totalRecipe.textContent =  ` ${count} recettes `;  
-              
+            if(count == 0){
+                const message = document.createElement('div');
+                message.setAttribute("class", "message_recipe")
+                message.innerHTML =`  « Aucune recette ne contient ‘${searchValue}’ vous pouvez chercher «tarte aux pommes », « poisson », etc. `;  
+                cardContainer.textContent ="";
+                cardContainer.appendChild(message)
+
+            }
+           
         })
       
     }
@@ -62,13 +78,7 @@ const figure = document.getElementsByClassName("recipe-card");
             })
             totalRecipe.innerHTML =  ` ${ result.length} recettes `;
             
-            // vérification si au moins une recette est sélectionnée. Sinon on affiche un message
-            if(result.length == 0){
-                let searchValue = search.value, value = searchValue.toLowerCase();
-
-                msg.style.display = "block";
-            }
-
+            
     }  
 
     //Total recettes

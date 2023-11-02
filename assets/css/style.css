@@ -226,6 +226,12 @@ color: black;
   font-size: 25px;
 }
 
+.message_recipe{
+  font-family: 'oswald', sans-serif;
+  font-size: 40px;
+  width: 900px;
+}
+
 /* cards recipes */
 
 .recipes-cards-container {
