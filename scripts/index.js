@@ -8,11 +8,11 @@ import { filterRecipes, displayRecipes } from "./utils/search.js";
 function init(){
   
   // selet filter
-  const ingredient = filterIngredients();
+  filterIngredients();
   listIngredient(recipes);
-  const ustensil = filterUstensils();
+  filterUstensils();
   listUstensil(recipes);
-  const Appareil = filteAppareils();
+  filteAppareils();
   listAppareil(recipes)
 
   

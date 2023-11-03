@@ -31,7 +31,7 @@ export const filterUstensils = () => {
  export const listUstensil = (recipes) => {
     const ul = document.getElementById("ustensil");
     recipes.map(element => {
-      let ustensils = element["ustensils"];
+      const ustensils = element["ustensils"];
      
       
 

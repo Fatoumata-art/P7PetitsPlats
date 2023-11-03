@@ -46,11 +46,11 @@ export const createCards = (recipe) => {
                     
         let quantity_text = "";
         // We check if we have a quantity to show
-            if(ingredient.hasOwnProperty("quantity"))
+            if(Object.prototype.hasOwnProperty.call(ingredient ,"quantity")) //error solved from github
             {
                 quantity_text = "" + ingredient["quantity"];
                 // We check if there is a unit to diplay
-                if(ingredient.hasOwnProperty("unit"))
+                if(Object.prototype.hasOwnProperty.call(ingredient ,"unit")) //error solved from github
                 {
                     quantity_text+=" " + ingredient["unit"];
                 }
