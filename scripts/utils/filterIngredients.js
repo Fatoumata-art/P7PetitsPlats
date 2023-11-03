@@ -34,10 +34,10 @@ export const filterIngredients = () => {
           const selectFilter = document.querySelector('.recipes-filter');
             recipes.map(element => {
             // console.log(element["ingredients"]);
-              let ingredients = element["ingredients"];
+              const ingredients = element["ingredients"];
               const ul = selectFilter.querySelector(".list_option");
 
-              const data = ingredients.filter(ingredient => {
+              ingredients.filter(ingredient => {
               // console.log(ingredient["ingredient"])
                 const li = document.createElement('li');
                 li.setAttribute('class', 'option')
@@ -48,12 +48,12 @@ export const filterIngredients = () => {
 
             // search ingredient
             const input = document.getElementById("optiontSearch") ;
-            let clear = document.querySelector('.search .fa-times')
+            const clear = document.querySelector('.search .fa-times')
 
-            input.addEventListener('input', (e) => {
+            input.addEventListener('input', () => {
             
-              let value = input.value;
-              let option = document.getElementsByClassName("option");
+            const value = input.value;
+              const option = document.getElementsByClassName("option");
               clear.addEventListener('click', () => {
                 input.value = '';
                 clear.style.display = "none";

@@ -4,12 +4,12 @@
  optiontSearches.forEach(optiontSearch =>
    
    optiontSearch.addEventListener('keyup', function(){
-     let filter, li, i, textValue;
-     filter = optiontSearch.value.toUpperCase();
-     li = optionList.getElementsByTagName(li);
-     for( i = 0; i < li.length; i++){
+     
+    const filter = optiontSearch.value.toUpperCase();
+    const  li = optionList.getElementsByTagName(li);
+     for(let i = 0; i < li.length; i++){
        liCount = li[i];
-       textValue = liCount.textContent;
+       const textValue = liCount.textContent;
        if(textValue.toUpperCase().indexOf(filter) > -1){
          li[i].style.display = '';
        }else{

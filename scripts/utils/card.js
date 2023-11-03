@@ -38,7 +38,7 @@ export const createCards = (recipe) => {
         const ul = card.querySelector('ul');
 
         for (let j = 0; j < recipe["ingredients"].length; j++) {
-            let ingredient = recipe["ingredients"][j];
+            const ingredient = recipe["ingredients"][j];
 
         const li = document.createElement("li");
         li.classList.add('list')

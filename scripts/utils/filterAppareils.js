@@ -30,10 +30,10 @@ export const filteAppareils = () => {
   }
 
  export const listAppareil = (recipes) => {
-    const selectFilter = document.querySelector('.recipes-filter');
+  
     const ul = document.getElementById("appareil");
-    const arrayIngredients = recipes.map(element => {
-      let appareils = element["appliance"];
+    recipes.map(element => {
+      const appareils = element["appliance"];
         //console.log("appliance", appareils)
    
         const li = document.createElement('li');

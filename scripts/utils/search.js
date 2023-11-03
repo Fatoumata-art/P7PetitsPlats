@@ -4,8 +4,8 @@ import { createCards } from "./card.js";
 const cardContainer = document.querySelector(" .recipes-cards-container ");
 const search = document.getElementById("search_recipe");
 const totalRecipe = document.getElementById("totalRecipe");
-let msg = document.querySelector(".container_header .msgError");
-const figure = document.getElementsByClassName("recipe-card");
+const msg = document.querySelector(".container_header .msgError");
+//const figure = document.getElementsByClassName("recipe-card");
 const clear = document.querySelector('.container_header .fa-times');
 
    /*export const filterRecipes = () => {
@@ -50,7 +50,7 @@ const clear = document.querySelector('.container_header .fa-times');
             let count = 0
             const  filterData = [];
 
-            for (let element of recipes) {
+            for (const element of recipes) {
                 if ( element.name.includes(value) ||
                 element.description.includes(value) ||
                 element.ingredients.includes(value)) {
