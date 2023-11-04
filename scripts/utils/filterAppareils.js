@@ -13,8 +13,8 @@ export const filteAppareils = () => {
          
        </div>
           <ul class="list_option" id="appareil">
-            <div class="search">
-            <input type="text" id="optiontSearch" placeholder="">
+            <div class="search3">
+            <input type="text" id="optiontSearchAppareil" placeholder="">
             <span><i class="fa fa-times" aria-hidden="true"></i></span>
             <i class="fal fa-search"></i>
             </div>
@@ -32,17 +32,38 @@ export const filteAppareils = () => {
  export const listAppareil = (recipes) => {
   
     const ul = document.getElementById("appareil");
-    recipes.map(element => {
+    recipes.filter(element => {
       const appareils = element["appliance"];
-        //console.log("appliance", appareils)
-   
         const li = document.createElement('li');
          li.setAttribute('class', 'option');
        li.textContent = appareils;
          //console.log(li)
          ul.appendChild(li);
     });
+    // search ingredient and clear input
+    const input = document.getElementById("optiontSearchAppareil") ;
+    const clear = document.querySelector('.search3 .fa-times')
+    input.addEventListener('input', () => {
+    const value = input.value;
+      const option = document.getElementsByClassName("option");
+      clear.addEventListener('click', () => {
+        input.value = '';
+        clear.style.display = "none";
+      })
+    
 
+      for( let x = 0; x < option.length; x++){
+        if(!option[x].innerHTML.toLowerCase().includes(value.toLowerCase())){
+          option[x].style.display = "none";
+          clear.style.display = "block"
+        
+        }
+        else{
+          option[x].style.display = "block";
+        }
+      }
+      
+    })
     
     
   
