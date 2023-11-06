@@ -32,12 +32,20 @@ h1{
     font-size: 48px;
 }
 
+form{
+  position: relative;
+}
+
 .form-control{
- position: relative;
+  
    height: 65px;
    border-radius: 10px;
  
 }
+/* .form-control:focus{
+  border-color: #FFD15B;
+  box-shadow: #efeaa2;
+} */
 
 .btn, .fa-times{
   position: absolute;
@@ -51,13 +59,11 @@ h1{
 }
 
 .fa-times{
-  position: absolute;
   right: 3rem; 
   color: rgb(94, 92, 92);
   font-size: 25px;
- display: flex;
- align-items: center;
   background-color: transparent;
+  top: 50%;
  display: none;
 }
 .container_header{

@@ -4,7 +4,7 @@ import { createCards } from "./card.js";
 const cardContainer = document.querySelector(" .recipes-cards-container ");
 const search = document.getElementById("search_recipe");
 const totalRecipe = document.getElementById("totalRecipe");
-const msg = document.querySelector(".container_header .msgError");
+const msg = document.querySelector(" .msgError");
 //const figure = document.getElementsByClassName("recipe-card");
 const clear = document.querySelector('.container_header .fa-times');
 
@@ -37,13 +37,14 @@ const clear = document.querySelector('.container_header .fa-times');
 
             //message under inputSearch
             if(value.length < 3){
+                msg.innerHTML = "Veiller saisir 3 caractères minimum";
+                msg.style.color = "white";
                 clear.style.display = "block";
                 clear.addEventListener("click", () => {
                     search.value = '';
                     clear.style.display = "none";
                 })
-                msg.innerHTML = "Veiller saisir 3 caractères minimum";
-               msg.style.color = "white";
+               
                return false;
             }
             msg.innerHTML =""
