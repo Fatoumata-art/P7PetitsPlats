@@ -15,7 +15,7 @@ export const filterUstensils = () => {
        </div>
           <ul class="list_option" id="ustensil">
             <div class="search2">
-            <input type="text" id="optiontSearchUstensil" placeholder=""> <span><i class="fa fa-times" aria-hidden="true"></i></span>
+            <input class="inpuTag" type="text" id="optiontSearchUstensil" placeholder=""> <span><i class="fa fa-times" aria-hidden="true"></i></span>
             <i class="fal fa-search"></i>
           </div>
           </ul>

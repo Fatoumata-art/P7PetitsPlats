@@ -90,14 +90,6 @@ section{
 } */
 
 /* filter  */
-
-.filter_section{
-    display: flex;
-    justify-content: space-between;
-    
-    
-}
-
 .filter_contenaire{
     width: 100%;
     display: flex;
@@ -223,6 +215,49 @@ font-weight: 400;
 color: black;
 }
 
+/* tag */
+.tags_list{
+  margin-top: 30px;
+  display: flex;
+  column-gap: 10px;
+}
+
+.item-tag{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  width: max-content;
+  padding: 6px;
+  background-color: #FFD15B;
+  border-radius: 15px;
+  cursor: default;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btn-rm-tag{
+  position: relative;
+  width: 15px;
+  height: 15px;
+ background-color: black;
+  border-radius: 50%;
+  border: none;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+ 
+
+}
+.btn-rm-tag .fa-times{
+  position: static;
+  display: block;
+  color: #FFD15B;
+  font-size: 8px;
+  height: 50%;
+ 
+ 
+}
 
 /* end filter button */
 

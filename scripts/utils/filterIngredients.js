@@ -15,7 +15,7 @@ export const filterIngredients = () => {
        </div>
           <ul class="list_option">
             <div class="search">
-            <input type="text" id="optiontSearch" placeholder="">
+            <input class="inpuTag" type="text" id="optiontSearchIngredient" placeholder="">
             <span><i class="fa fa-times" aria-hidden="true"></i></span>
             <i class="fal fa-search"></i>
           </div>
@@ -33,21 +33,22 @@ export const filterIngredients = () => {
 
           const selectFilter = document.querySelector('.recipes-filter');
             recipes.map(element => {
-             console.log(element["ingredients"]);
+            //console.log(element["ingredients"]);
               const ingredients = element["ingredients"];
               const ul = selectFilter.querySelector(".list_option");
 
              ingredients.filter(ingredient => {
-               console.log(ingredient["ingredient"])
+               //console.log(ingredient["ingredient"])
                 const li = document.createElement('li');
-                li.setAttribute('class', 'option')
+                li.setAttribute('class', 'option');
+                li.setAttribute('value', ingredient["ingredient"]);
                 li.innerHTML =  `${ ingredient["ingredient"] }`;
                 ul.appendChild(li);
               });
             });
 
             // search ingredient and clear input
-            const input = document.getElementById("optiontSearch") ;
+            const input = document.getElementById("optiontSearchIngredient") ;
             const clear = document.querySelector('.search .fa-times')
             input.addEventListener('input', () => {
             const value = input.value;

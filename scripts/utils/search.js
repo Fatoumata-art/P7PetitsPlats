@@ -1,4 +1,5 @@
 import { createCards } from "./card.js";
+//import {  }
 
 
 const cardContainer = document.querySelector(" .recipes-cards-container ");
@@ -65,8 +66,7 @@ const clear = document.querySelector('.container_header .fa-times');
             if(count == 0){
                 const message = document.createElement('div');
                 message.setAttribute("class", "message_recipe")
-                message.innerHTML =`  « Aucune recette ne contient ‘${searchValue}’ vous pouvez chercher «tarte aux pommes », « poisson », etc. `;  
-                cardContainer.textContent ="";
+                message.innerHTML =`  « Aucune recette ne contient <span style="font-weight:bolder">‘${searchValue}’</span> vous pouvez chercher «tarte aux pommes », « poisson », etc. `;  
                 cardContainer.appendChild(message);
             }  
         })

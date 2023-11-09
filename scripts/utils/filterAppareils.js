@@ -14,7 +14,7 @@ export const filteAppareils = () => {
        </div>
           <ul class="list_option" id="appareil">
             <div class="search3">
-            <input type="text" id="optiontSearchAppareil" placeholder="">
+            <input class="inpuTag" type="text" id="optiontSearchAppareil" placeholder="">
             <span><i class="fa fa-times" aria-hidden="true"></i></span>
             <i class="fal fa-search"></i>
             </div>
