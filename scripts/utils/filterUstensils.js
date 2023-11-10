@@ -33,11 +33,10 @@ export const filterUstensils = () => {
     recipes.map(element => {
       const ustensils = element["ustensils"];
      
-      
-
      ustensils.filter(ustensil => {
         const li = document.createElement('li');
-        li.setAttribute('class', 'option')
+        li.setAttribute('class', 'option');
+        li.setAttribute('value', ustensil);
         li.innerHTML =  `${ ustensil }`;
         ul.appendChild(li);
       });

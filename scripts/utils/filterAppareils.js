@@ -36,6 +36,7 @@ export const filteAppareils = () => {
       const appareils = element["appliance"];
         const li = document.createElement('li');
          li.setAttribute('class', 'option');
+         li.setAttribute('value', appareils);
        li.textContent = appareils;
          //console.log(li)
          ul.appendChild(li);

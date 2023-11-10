@@ -1,5 +1,4 @@
-import { createCards } from "./card.js";
-//import {  }
+import { createCards } from "../DomElements/cardDom.js";
 
 
 const cardContainer = document.querySelector(" .recipes-cards-container ");
@@ -8,6 +7,11 @@ const totalRecipe = document.getElementById("totalRecipe");
 const msg = document.querySelector(" .msgError");
 //const figure = document.getElementsByClassName("recipe-card");
 const clear = document.querySelector('.container_header .fa-times');
+
+//search by tag
+const tagContainer = document.querySelector(".tags_list").innerHTML;
+
+
 
    /*export const filterRecipes = () => {
         search.addEventListener("input", (e) => {
@@ -56,6 +60,7 @@ const clear = document.querySelector('.container_header .fa-times');
                 if ( element.name.includes(value) ||
                 element.description.includes(value) ||
                 element.ingredients.includes(value)) {
+                    console.log("hello");
                     filterData.push(element)
                     count++
                 }
