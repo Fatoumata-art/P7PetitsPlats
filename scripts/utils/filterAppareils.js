@@ -28,18 +28,26 @@ export const filteAppareils = () => {
         })
       filterContainer.appendChild(selectFilter);
   }
+  let appareil = [];
+  let appareilsSet = new Set();
 
  export const listAppareil = (recipes) => {
   
     const ul = document.getElementById("appareil");
-    recipes.filter(element => {
-      const appareils = element["appliance"];
+    recipes.forEach(element => {
+       appareil = element["appliance"];
+        
+        if (!appareilsSet.has(appareil)){
+          console.log(appareil)
+          appareilsSet.add(appareil);
+
         const li = document.createElement('li');
          li.setAttribute('class', 'option');
-         li.setAttribute('value', appareils);
-       li.textContent = appareils;
+         li.setAttribute('value', appareil);
+       li.textContent = appareil;
          //console.log(li)
          ul.appendChild(li);
+        }
     });
     // search ingredient and clear input
     const input = document.getElementById("optiontSearchAppareil") ;

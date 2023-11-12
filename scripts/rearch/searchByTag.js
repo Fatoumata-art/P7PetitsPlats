@@ -25,7 +25,6 @@ export const displayRecipesByTag = (recipes) => {
             div.appendChild(tag);
 
             let tagValue = option.getAttribute("value");
-            console.log(tagValue);
             let count = 0
             const  filterData = [];
             
@@ -33,7 +32,7 @@ export const displayRecipesByTag = (recipes) => {
               // display recipes by tag ingredients
               for (let j = 0; j < recipe["ingredients"].length; j++) {
                 const ingredients = recipe["ingredients"][j]
-                console.log(recipe.appliance)
+               // console.log(recipe.appliance)
                 if (  ingredients.ingredient.includes(tagValue) || 
                       recipe.ustensils.includes(tagValue) ||
                       recipe.appliance.includes(tagValue)

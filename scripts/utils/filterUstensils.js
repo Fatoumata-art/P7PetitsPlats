@@ -28,18 +28,29 @@ export const filterUstensils = () => {
       filterContainer.appendChild(selectFilter);
   }
 
+  let ustensilsList = [];
+ let ustensilsSet = new Set();
+
  export const listUstensil = (recipes) => {
     const ul = document.getElementById("ustensil");
-    recipes.map(element => {
-      const ustensils = element["ustensils"];
+    recipes.forEach(element => {
+      ustensilsList = element["ustensils"];
+      //console.log(ustensilsList)
+
+      for(let i = 0; i <  ustensilsList.length; i++){
+        const ustensil = ustensilsList[i];
+
+        if (!ustensilsSet.has(ustensil)){
+            console.log(ustensil)
+            ustensilsSet.add(ustensil);
      
-     ustensils.filter(ustensil => {
-        const li = document.createElement('li');
-        li.setAttribute('class', 'option');
-        li.setAttribute('value', ustensil);
-        li.innerHTML =  `${ ustensil }`;
-        ul.appendChild(li);
-      });
+          const li = document.createElement('li');
+          li.setAttribute('class', 'option');
+          li.setAttribute('value', ustensil);
+          li.innerHTML =  `${ ustensil }`;
+          ul.appendChild(li);
+      }
+    }
    });
 
      // search ingredient and clear input

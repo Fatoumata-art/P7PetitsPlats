@@ -29,36 +29,43 @@ export const filterIngredients = () => {
       filterContainer.appendChild(selectFilter);
   }
 
+  let ingredientsList = [];
+ let ingredientsSet = new Set();
+
  export const listIngredient = (recipes) => {
-
           const selectFilter = document.querySelector('.recipes-filter');
-            recipes.map(element => {
-            //console.log(element["ingredients"]);
-              const ingredients = element["ingredients"];
-              const ul = selectFilter.querySelector(".list_option");
+           ingredientsList = recipes.forEach(element => {
+           const ingredients = element["ingredients"];
+            // console.log(ingredients)
+           
+            for(let i = 0; i <  ingredients.length; i++){
+             const ingredient = ingredients[i];
+                if (!ingredientsSet.has(ingredient.ingredient)){
+                  //console.log(ingredient.ingredient)
+                  ingredientsSet.add(ingredient.ingredient);
 
-             ingredients.filter(ingredient => {
-               //console.log(ingredient["ingredient"])
-                const li = document.createElement('li');
-                li.setAttribute('class', 'option');
-                li.setAttribute('value', ingredient["ingredient"]);
-                li.innerHTML =  `${ ingredient["ingredient"] }`;
-                ul.appendChild(li);
-              });
-            });
+                  const ul = selectFilter.querySelector(".list_option");
+                  const li = document.createElement('li');
+                  li.setAttribute('class', 'option');
+                  li.setAttribute('value', ingredient.ingredient);
+                  li.innerHTML =  `${ ingredient.ingredient}`;
+                  ul.appendChild(li);
+              }
+                  
+            }
+           });
 
-            // search ingredient and clear input
+            //search ingredient and clear input
             const input = document.getElementById("optiontSearchIngredient") ;
             const clear = document.querySelector('.search .fa-times')
             input.addEventListener('input', () => {
-            const value = input.value;
+              const value = input.value;
               const option = document.getElementsByClassName("option");
               clear.addEventListener('click', () => {
                 input.value = '';
                 clear.style.display = "none";
               })
             
-
               for( let x = 0; x < option.length; x++){
                 if(!option[x].innerHTML.toLowerCase().includes(value.toLowerCase())){
                   option[x].style.display = "none";
@@ -69,12 +76,5 @@ export const filterIngredients = () => {
                   option[x].style.display = "block";
                 }
               }
-              
-            })
-    
-  
-        
-}
-
-
-
+          })
+        }

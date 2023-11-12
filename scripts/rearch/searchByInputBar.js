@@ -8,11 +8,6 @@ const msg = document.querySelector(" .msgError");
 //const figure = document.getElementsByClassName("recipe-card");
 const clear = document.querySelector('.container_header .fa-times');
 
-//search by tag
-const tagContainer = document.querySelector(".tags_list").innerHTML;
-
-
-
    /*export const filterRecipes = () => {
         search.addEventListener("input", (e) => {
             const searchValue = e.target.value//.toLowerCase();
@@ -49,7 +44,6 @@ const tagContainer = document.querySelector(".tags_list").innerHTML;
                     search.value = '';
                     clear.style.display = "none";
                 })
-               
                return false;
             }
             msg.innerHTML =""
@@ -74,17 +68,13 @@ const tagContainer = document.querySelector(".tags_list").innerHTML;
                 message.innerHTML =`  « Aucune recette ne contient <span style="font-weight:bolder">‘${searchValue}’</span> vous pouvez chercher «tarte aux pommes », « poisson », etc. `;  
                 cardContainer.appendChild(message);
             }  
-        })
-
-        
-        
+        })    
       
     }
 
     export const displayRecipes = (data) => {
 
         cardContainer.innerHTML=''
-
         const result = data.map(recipe => {
                     createCards(recipe)
             })
@@ -93,33 +83,4 @@ const tagContainer = document.querySelector(".tags_list").innerHTML;
             
     }  
 
-    //Total recettes
-     //Total recettes
-     
-  
- 
-
-
-    //  export const clearButton = () => {
-    //     let clear = document.getElementsByTagName('.fa-times')
-    //    // console.log(clear)
-    //     let inputs = document.getElementsByTagName("input");
-    //     //console.log(inputs);
-      
-    //     for(let i = 0; i < clear.length; i++){
-    //       clear[i].addEventListener('click', () => {
-          
-    //         inputs.forEach(input => input.value = '');
-    //         clear.style.display = "none";
-    //       })
-    //     }
-           
-        
-    //         // inputs.addEventListener('input', () => {
-    //         //   clear.style.display = "block";
-    //         // })
-        
-    //   }
-      
-      
-    //   clearButton();
+    
