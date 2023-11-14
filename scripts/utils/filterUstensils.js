@@ -41,7 +41,6 @@ export const filterUstensils = () => {
         const ustensil = ustensilsList[i];
 
         if (!ustensilsSet.has(ustensil)){
-            console.log(ustensil)
             ustensilsSet.add(ustensil);
      
           const li = document.createElement('li');

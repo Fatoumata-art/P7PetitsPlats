@@ -38,7 +38,7 @@ export const filteAppareils = () => {
        appareil = element["appliance"];
         
         if (!appareilsSet.has(appareil)){
-          console.log(appareil)
+          //console.log(appareil)
           appareilsSet.add(appareil);
 
         const li = document.createElement('li');

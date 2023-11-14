@@ -21,11 +21,10 @@ function init(){
   
   //display recipes
   filterRecipes(recipes);
-  displayRecipes(recipes);
- 
+ displayRecipes(recipes);
+
   
 }
-
 
 
   init()

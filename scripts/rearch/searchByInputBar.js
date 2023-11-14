@@ -8,27 +8,7 @@ const msg = document.querySelector(" .msgError");
 //const figure = document.getElementsByClassName("recipe-card");
 const clear = document.querySelector('.container_header .fa-times');
 
-   /*export const filterRecipes = () => {
-        search.addEventListener("input", (e) => {
-            const searchValue = e.target.value//.toLowerCase();
-           // console.log(searchValue);
-            let count = 0   
-            for (let i = 0; i < figure.length; i++) { 
-                if (!figure[i].innerHTML.toLowerCase().includes(searchValue)) {
-                    figure[i].style.display= "none";   
-                    console.log(figure.length)
-                }
-                else {
-                    figure[i].style.display = "block" ; 
-                    count++
-                }
-            }
-
-            totalRecipe.textContent =  ` ${count} recettes `;  
-              
-        })
-       totalRecipe.textContent =  ` ${ figure.length} recettes `;  
-    }*/
+//let tags = [];
 
     export const filterRecipes = (recipes) => {
         search.addEventListener("input", (e) => {
@@ -43,6 +23,7 @@ const clear = document.querySelector('.container_header .fa-times');
                 clear.addEventListener("click", () => {
                     search.value = '';
                     clear.style.display = "none";
+                    displayRecipes(recipes);
                 })
                return false;
             }
@@ -68,7 +49,8 @@ const clear = document.querySelector('.container_header .fa-times');
                 message.innerHTML =`  « Aucune recette ne contient <span style="font-weight:bolder">‘${searchValue}’</span> vous pouvez chercher «tarte aux pommes », « poisson », etc. `;  
                 cardContainer.appendChild(message);
             }  
-        })    
+        })  
+
       
     }
 

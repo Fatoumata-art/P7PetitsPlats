@@ -4,7 +4,6 @@ import { displayRecipes } from "./searchByInputBar.js";
 export const displayRecipesByTag = (recipes) => {
         const div = document.querySelector(".tags_list");
         const options = document.querySelectorAll("li");
-
         for(let option of options){
 
           option.addEventListener('click', () => {
@@ -21,8 +20,10 @@ export const displayRecipesByTag = (recipes) => {
               clear.addEventListener("click", () => {
                 tag.style.display = "none";
               })
-             // console.log(tag.lenght)
-            div.appendChild(tag);
+               div.appendChild(tag);
+            // if(div =""){
+            //   displayRecipes(recipes);
+            // }
 
             let tagValue = option.getAttribute("value");
             let count = 0
@@ -31,15 +32,16 @@ export const displayRecipesByTag = (recipes) => {
             recipes.forEach(recipe => {
               // display recipes by tag ingredients
               for (let j = 0; j < recipe["ingredients"].length; j++) {
-                const ingredients = recipe["ingredients"][j]
-               // console.log(recipe.appliance)
-                if (  ingredients.ingredient.includes(tagValue) || 
-                      recipe.ustensils.includes(tagValue) ||
-                      recipe.appliance.includes(tagValue)
-                   ){
+                const ingredients = recipe["ingredients"][j];
+               
+                if (  ingredients.ingredient.includes(tagValue) ){
                       filterData.push(recipe)
                       count++;
                 }
+              }
+              if(recipe["ustensils"].includes(tagValue) || recipe.appliance.includes(tagValue)){
+                filterData.push(recipe)
+                count++;
               }
              
             });
